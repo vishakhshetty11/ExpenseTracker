@@ -56,7 +56,7 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
                 <List
                     sx={{ width: '100%', bgcolor: 'background.paper', color: "black", borderRadius: "10px" }}
                 >
-                    {currentExpenseList.length > 0 && currentExpenseList.map((item) => (
+                    {data.length > 0 && data.map((item) => (
                         <React.Fragment key={item.id}>
                             <ListItem>
                                 <ListItemIcon>
@@ -79,7 +79,7 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
                             <Divider sx={{ mx: 2, mb: 1 }} />
                         </React.Fragment>
                     ))}
-                    {totaPages > 1 &&
+                    {/* {totaPages > 1 &&
                         <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
                             <button disabled={currentPage === 1}
                                 style={{ backgroundColor: "#f1f1f1", borderRadius: "50%", padding: "5px 10px", color: "#000" }} onClick={() =>
@@ -88,7 +88,7 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
                             <button disabled={currentPage === totaPages}
                                 style={{ backgroundColor: "#f1f1f1", borderRadius: "50%", padding: "5px 10px", color: "#000" }} onClick={() =>
                                     setCurrentPage(prev => prev + 1)}><ArrowForwardIcon /></button>
-                        </div>}
+                        </div>} */}
                 </List>}
         </div>
     )
