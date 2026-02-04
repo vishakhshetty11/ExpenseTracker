@@ -60,14 +60,20 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
                     onClose();
                     return { ...item };
                 }
-                setWalletBalance(prev => ( Number(prev) +  Number(priceDifference)));
+                setWalletBalance(prev => (Number(prev) + Number(priceDifference)));
                 return { ...formdata, id: editId };
             }
-            else{
-                return {...item};
-            }            
+            else {
+                return { ...item };
+            }
         })
         setExpenseList(updated);
+        setFormData({
+            title: "",
+            price: "",
+            category: "",
+            date: ""
+        })
         onClose();
 
     }

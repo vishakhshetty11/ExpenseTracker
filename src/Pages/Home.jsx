@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Grid } from "@mui/material";
-import Card from '../components/card';
+import Card from '../components/Card';
 import IncomeModal from '../components/Modals/IncomeModal';
 import ExpenseModal from '../components/Modals/ExpenseModal';
 import ExpenseList from '../components/ExpenseList';
