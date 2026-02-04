@@ -111,7 +111,7 @@ function Home() {
             </div>
             <Grid container spacing={2} mt={3} >
                 <Grid size={{ xs: 12, sm: 12, md:8, lg:8 }}>
-                    <h3>Recent Transactions</h3>
+                    <h3>Transactions</h3>
                     <ExpenseList data={expenseList} setExpenseList={setExpenseList} setWalletBalance={setWalletBalance}
                         setEditId={setEditId} openModal={() => setOpenExpense(true)} />
                 </Grid>

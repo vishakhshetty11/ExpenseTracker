@@ -100,7 +100,7 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
                             required onChange={handleExpenseChange} />
                     </div>
                     <button type='submit' className='addBalance'>{editId ? "Edit Expense" : "Add Expense"}</button>
-                    <button type='submit' className='btnCancel' onClick={onClose}>Cancel</button>
+                    <button type='button' className='btnCancel' onClick={onClose}>Cancel</button>
                 </form>
             </div>
         </div>
