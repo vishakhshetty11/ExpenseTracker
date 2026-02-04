@@ -55,7 +55,7 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
         const updated = expenseList.map(item => {
             if (item.id === editId) {
                 const priceDifference = Number(item.price) - Number(formdata.price);
-                if (priceDifference < 0 && Math.abs(formdata.price) > walletBalance) {
+                if (priceDifference < 0 && Math.abs(priceDifference) > walletBalance) {
                     enqueueSnackbar("Price Should be less than wallet balance", { variant: "error" });
                     onClose();
                     return { ...item };
