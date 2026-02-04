@@ -87,40 +87,47 @@ function Home() {
         }
     }, [walletBalance]);
 
-    
+
 
     return (
         <div>
             <h1>Expense Tracker</h1>
             <div className='cardDiv'>
-                <Card type="income" amount={walletBalance} openModal={() => setOpenIncome(true)} />
-                <Card type="expense" amount={expenses} openModal={() => setOpenExpense(true)} />
-
-                <CustomPieChart  data={[
-                    {name: "Food", value: categoryAmount.food},
-                    {name: "Travel", value: categoryAmount.travel},
-                    {name: "Entertainment", value: categoryAmount.entertainment},
-                ]} />
+                <Grid container spacing={2}>
+                    <Grid  size={{ xs: 12, sm: 3, md:4, lg:4 }} >
+                        <Card type="income" amount={walletBalance} openModal={() => setOpenIncome(true)} />
+                    </Grid>
+                    <Grid  size={{ xs: 12, sm: 3, md:4, lg:4 }}>
+                        <Card type="expense" amount={expenses} openModal={() => setOpenExpense(true)} />
+                    </Grid>
+                    <Grid  size={{ xs: 12, sm: 6, md:4, lg:4 }}>
+                        <CustomPieChart data={[
+                            { name: "Food", value: categoryAmount.food },
+                            { name: "Travel", value: categoryAmount.travel },
+                            { name: "Entertainment", value: categoryAmount.entertainment },
+                        ]} />
+                    </Grid>
+                </Grid>
             </div>
             <Grid container spacing={2} mt={3} >
-                <Grid size={8}>
+                <Grid size={{ xs: 12, sm: 12, md:8, lg:8 }}>
                     <h3>Recent Transactions</h3>
                     <ExpenseList data={expenseList} setExpenseList={setExpenseList} setWalletBalance={setWalletBalance}
-                     setEditId={setEditId}  openModal={() => setOpenExpense(true)} />
+                        setEditId={setEditId} openModal={() => setOpenExpense(true)} />
                 </Grid>
-                <Grid size={4}>
+                <Grid size={{ xs: 12, sm: 12, md:4, lg:4 }}>
                     <h3>Top Expenses</h3>
-                    <ExpenseCountChart data={[                        
-                        {name:"Entertainment", value:categoryCount.entertainment},
-                        {name :"Food", value:categoryCount.food},
-                        {name : "Travel", value:categoryCount.travel},
-                        ]} />
+                    <ExpenseCountChart data={[
+                        { name: "Entertainment", value: categoryCount.entertainment },
+                        { name: "Food", value: categoryCount.food },
+                        { name: "Travel", value: categoryCount.travel },
+                    ]} />
                 </Grid>
             </Grid>
             <IncomeModal open={openIncome} onClose={() => setOpenIncome(false)} setWalletBalance={setWalletBalance} />
-            <ExpenseModal open={openExpense} onClose={() => setOpenExpense(false)} 
-            walletBalance={walletBalance} setWalletBalance={setWalletBalance}
-            expenseList={expenseList} setExpenseList={setExpenseList} editId={editId} />
+            <ExpenseModal open={openExpense} onClose={() => setOpenExpense(false)}
+                walletBalance={walletBalance} setWalletBalance={setWalletBalance}
+                expenseList={expenseList} setExpenseList={setExpenseList} editId={editId} />
         </div>
     )
 }

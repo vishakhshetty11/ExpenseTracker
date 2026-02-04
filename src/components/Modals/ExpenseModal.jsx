@@ -92,9 +92,9 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
                     <div style={{ marginBottom: "10px" }}>
                         <select className='expenseCat' name='category' value={formdata.category} required onChange={handleExpenseChange} >
                             <option value="">Select category</option>
-                            <option value="food">food</option>
-                            <option value="travel">travel</option>
-                            <option value="entertainment">entertainment</option>
+                            <option value="food">Food</option>
+                            <option value="travel">Travel</option>
+                            <option value="entertainment">Entertainment</option>
                         </select>
                         <input type='date' className='expenseInput' name="date" value={formdata.date}
                             required onChange={handleExpenseChange} />
