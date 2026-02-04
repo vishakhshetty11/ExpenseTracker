@@ -1,0 +1,13 @@
+.btn {
+  width: 35px !important;
+  font-size: 4px !important;
+  padding: 9px 0px !important;
+  min-width: 0 !important;
+  border-radius: 10px !important;
+}
+.btnDanger{
+    background-color: red !important;
+}
+.btnWarning{
+    background-color: #f4bb4a !important;
+}

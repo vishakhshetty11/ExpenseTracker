@@ -1,0 +1,10 @@
+.cardDiv {
+  width: 100%;
+  min-height: 200px;
+  background-color: #626262;
+  border-radius: 8px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 20px;
+}

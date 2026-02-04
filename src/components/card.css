@@ -1,0 +1,16 @@
+
+.card {
+  width: 250px;
+  height: 150px;
+  background-color: #9b9b9b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+.btnIncome{
+   background: linear-gradient(135deg, #b3dc52, #8be048);
+}
+.btnExpense{
+   background: linear-gradient(135deg, #ff8383, #ff3a3b);
+}
