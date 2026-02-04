@@ -35,7 +35,7 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
                 <ul id="transaction-list" className="transaction-container">
                     {data.map((expense, index) => (
                         <li key={index} className="transaction-item">
-                            {expense.category} - {expense.price}
+                            {expense.category.charAt(0).toUpperCase() + expense.category.slice(1)} - {expense.price}
                         </li>
                     ))}
                 </ul>
