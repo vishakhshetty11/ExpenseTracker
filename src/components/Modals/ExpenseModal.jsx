@@ -22,7 +22,7 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
             category: selectedExpense.category,
             date: selectedExpense.date
         });
-    }, [editId]);
+    }, [editId, open]);
     if (!open) { return null };
 
     const handleExpenseChange = (e) => {
