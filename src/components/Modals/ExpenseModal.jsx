@@ -67,13 +67,14 @@ function ExpenseModal({ open, onClose, walletBalance, setWalletBalance, expenseL
                 return { ...item };
             }
         })
-        setExpenseList(updated);
+        
         setFormData({
             title: "",
             price: "",
             category: "",
             date: ""
         })
+        setExpenseList(updated);
         onClose();
 
     }
