@@ -14,7 +14,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./ExpenseList.css"
 function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openModal }) {
 
-
+    const maxRecord = 3;
+    const [currentExpenseList, setCurrentExpenseList] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totaPages, setTotalPages] = useState(0);
 
     const fetchData = (id) => {
         setEditId(id);
@@ -27,6 +30,18 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
         const newData = data.filter(item => item.id != id);
         setExpenseList(newData);
     }
+    useEffect(() => {
+        const startIndex = (currentPage - 1) * maxRecord;
+        const lastIndex = Math.min(currentPage * maxRecord, data.length);
+        const currentList = data.slice(startIndex, lastIndex);
+        setCurrentExpenseList(currentList);
+        setTotalPages(Math.ceil(data.length / maxRecord))
+    }, [currentPage, data]);
+    useEffect(() => {
+        if (totaPages < currentPage && currentPage > 1) {
+            setCurrentPage(prev => Number(prev) - 1)
+        }
+    }, [totaPages])
     return (
         <div>
             {data.length === 0 ?
@@ -41,16 +56,9 @@ function ExpenseList({ data, setExpenseList, setWalletBalance, setEditId, openMo
                 <List
                     sx={{ width: '100%', bgcolor: 'background.paper', color: "black", borderRadius: "10px" }}
                 >
-                    <ul >
-                        {data.length > 0 && data.map((expense) => (
-                        <li key={expense.id}>
-                            {expense.category} - {expense.price}
-                        </li>
-                        ))}
-                    </ul>
                     {data.length > 0 && data.map((item) => (
                         <React.Fragment key={item.id}>
-                            <ListItem key={item.id}>
+                            <ListItem>
                                 <ListItemIcon>
                                     <span style={{ backgroundColor: '#d7d7d7', borderRadius: "50%", padding: "10px 8px 2px" }}>
                                         {item.category === "food" && <LocalPizzaIcon />}
