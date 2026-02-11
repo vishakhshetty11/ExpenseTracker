@@ -15,11 +15,11 @@ export default function Card({ type, amount, openModal }) {
             </h3>
             {type === "income" ?
                 <>
-                    <button type="submit" className='btnIncome' onClick={openModal}>+ Add Income</button>
+                    <button className='btnIncome' onClick={openModal}>+ Add Income</button>
                 </>
                 :
                 <>
-                    <button type="submit" className="btnExpense" onClick={openModal}>+ Add Expenses</button>
+                    <button className="btnExpense" onClick={openModal}>+ Add Expenses</button>
                 </>}
         </div>
     )
